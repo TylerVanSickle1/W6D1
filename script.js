@@ -66,7 +66,7 @@ const storeItems = [
         details: 'Enjoy for hours'
     },
 ]
-$('div#container').append('<h1></h1>')
+$('.container').append('<h1 class="topText"></h1>')
 $('h1').text("Products");
 $('h1').append('<hr style=width:55px;margin-left:0%;margin-top:10px;>');
 
@@ -81,7 +81,15 @@ for (let i = 0; i < storeItems.length; i++) {
             '<span class="details">' + storeItems[i].details + '</span>';
 
         paragraph.html(textStuff);
-        $('#container').append(paragraph);
+        $('.container').append(paragraph);
     }
-}
+};
 
+let darkMode = document.getElementById('toggleButton');
+
+darkMode.addEventListener('click', function(){
+    $('.container').toggleClass('containerDark')
+    $('body').toggleClass('bodyDark')
+    $('h1').toggleClass('textDark')
+    $('.button').toggleClass('buttonDark')
+})
